@@ -1,4 +1,4 @@
-﻿body{user-select: none;-moz-user-select:none;overflow-x:hidden;overflow-y:hidden;background:#000;font-family:Yahei mono,Verdana,fixedsys;overflow-x:hidden}
+﻿body{user-select: none;-moz-user-select:none;overflow-x:auto;overflow-y:auto;background:#000;font-family:Yahei mono,Verdana,fixedsys;overflow-x:hidden}
 td{font-family:Verdana;font-size:12px}
 div{left:0}
 #preloader{position: fixed;top:0;left:0;right:0;bottom:0;z-index:999;}
@@ -15,7 +15,7 @@ filter:alpha(opacity=90); /* IE 4-7 */
 opacity:.9; /* FireFox,Safari(WebKit),Opera */
 -moz-opacity:.9; /* FireFox<3.5 */
 position:absolute;width:600px;height:150px;top:170px;left:250;z-index:100;text-align: center; font-family: Yahei Mono; font-size: 18px; font-weight: bold; color: #000; background-color: rgba(91, 67, 46, 0); font-family:方正卡通简体}
-.WindowFrame{position:absolute;top:0;width:900px;left:50%;margin-left:-450px;height:600px;overflow:hidden}
+.WindowFrame{position:absolute;top:0;width:900px;left:50%;margin-left:-450px;height:600px;overflow:auto}
 
 #DivParty{
 filter:"alpha(opacity=90)"; /* IE 8 */
@@ -23,7 +23,7 @@ filter:alpha(opacity=90); /* IE 4-7 */
 opacity:.9; /* FireFox,Safari(WebKit),Opera */
 -moz-opacity:.9; /* FireFox<3.5 */
 position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align: center; font-family: Yahei Mono; font-size: 18px; font-weight: bold; color: #FFF; background-color: #5B432E}
-.WindowFrame{position:absolute;top:0;width:900px;left:50%;margin-left:-450px;height:600px;overflow:hidden}
+.WindowFrame{position:absolute;top:0;width:900px;left:50%;margin-left:-450px;height:600px;overflow:auto}
 
 #dLvlLink{position:absolute;top:587px;color:#fff;width:500px;left:50%;margin-left:-230px;font-size:13px;line-height:14px;height:15px;font-family:arial,sans-serif;z-index:1;text-align:left}
 #dLvlLink span{font-weight:bold;text-decoration:underline}
@@ -70,11 +70,11 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 #iSurfaceBackground .mini{position:absolute;background:url() no-repeat;_background:url() no-repeat;left:474px;top:203px;width:313px;height:133px;cursor:pointer}
 #iSurfaceBackground .riddle{position:absolute;background:url(images/interface/SelectorScreenChallenges_32.png) no-repeat;_background:url(images/interface/SelectorScreenChallenges_8.png) no-repeat;left:478px;top:303px;width:286px;height:122px;cursor:pointer}
 #iSurfaceBackground .handbook{position:absolute;background:url(images/interface/SelectorScreen_Almanac_32.png) no-repeat;_background:url(images/interface/SelectorScreen_Almanac_8.png) no-repeat;left:374px;top:428px;width:99px;height:99px;cursor:pointer}
-#ZombieHand{position:absolute;width:330px;height:330px;left:262px;top:264px;display:none;overflow:hidden}
+#ZombieHand{position:absolute;width:330px;height:330px;left:262px;top:264px;display:none;overflow:auto}
 #dName{position:absolute;left:35px;width:230px;top:93px;height:25px;text-align:center;color:#FC6;font-weight:bold;font-size:18px;font-family:微软雅黑,Verdana,Tahoma}
 #dNameDiv0{position:absolute;left:20px;top:-260px;width:293px;height:260px;background:url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat}
 #dNameDiv1{cursor:pointer;position:absolute;left:3px;top:96px;width:291px;height:71px;background:url(images/interface/SelectorScreen_WoodSign2_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign2_8.png) no-repeat}
-#dNameDiv2{position:absolute;left:14px;top:136px;width:293px;height:150px;background:url(images/interface/SelectorScreen_WoodSign3_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign3_8.png) no-repeat;overflow:hidden}
+#dNameDiv2{position:absolute;left:14px;top:136px;width:293px;height:150px;background:url(images/interface/SelectorScreen_WoodSign3_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign3_8.png) no-repeat;overflow:auto}
 
 #dSurfaceBack{position:absolute;top:0;width:0;height:0;z-index:255}
 #dHelp{width:814px;height:599px;background:url(images/interface/Help.png) no-repeat;position:absolute;display:none;left:133px;top:70px}
@@ -82,7 +82,7 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 
 @#dSelectLevel{position:absolute;width:100%;height:100%;font-weight:bold;display:none}
 #dOptionsMenuBack{position:absolute;text-align:center;left:244px;top:60px;width:412px;height:483px;display:none;background:url(images/interface/OptionsMenuback32.png) no-repeat;_background:url(images/interface/OptionsMenuback32.png) no-repeat}
-.TitleBigContainer{position:relative;width:220px;margin:120px auto 0 auto;height:240px;overflow:hidden}
+.TitleBigContainer{position:relative;width:220px;margin:120px auto 0 auto;height:240px;overflow:auto}
 @#dTitleSmallContainer span{cursor:pointer}
 
 
@@ -117,7 +117,7 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 #dFog img{opacity:.7;filter:alpha(opacity=70)}
 #tGround{position:absolute;width:1400px;height:600px;visibility:hidden;z-index:0}
 #dCardList{visibility:hidden;position:absolute;left:500px;top:0;width:100px;overflow:visible;z-index:254}
-#dCardList div{position:relative;cursor:pointer;padding:0;height:60px;overflow:hidden}
+#dCardList div{position:relative;cursor:pointer;padding:0;height:60px;overflow:auto}
 #dCardList span{cursor:pointer;text-align:right;position:absolute;left:58px;width:18px;top:30px;font-family:Cafeteria Black;font-size:20px}
 #dCardList img{position:absolute}
 #dZombie{position:absolute;width:335px;height:600px;left:1065px;top:0;z-index:1}
@@ -127,7 +127,7 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 #dSelectCard .bTitle{width:100%;height:40px;line-height:40px;text-align:center;margin-top:10px}
 #dSelectCard .button{width: 65px; height: 35px; border-left: 3px solid #85411C; border-right: 3px solid #4E250C; border-top: 3px solid #85411C; border-bottom: 3px solid #4E250C; background-color: #602D11;font-weight:bold; font-size:14px;cursor:pointer}
 #dPCard{position:relative;width:96%;height:455px;padding-left:13px;_padding-left:10px}
-#dPCard .span1,#dHandBookPCard .span1{cursor:pointer;width:70px;height:42px;overflow:hidden;float:left;margin:8px 0 0 2px;position:relative}
+#dPCard .span1,#dHandBookPCard .span1{cursor:pointer;width:70px;height:42px;overflow:auto;float:left;margin:8px 0 0 2px;position:relative}
 #dPCard .span2,#dHandBookPCard .span2{cursor:pointer;text-align:right;position:absolute;left:40px;width:18px;top:22px;font-family:Cafeteria Black;font-size:15px}
 #dPCard img,#dHandBookPCard img{left:0;width:70px;height:84px}
 
@@ -184,7 +184,7 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 }
 #dHandBookZCard .span1 {
 	cursor: pointer;
-	overflow: hidden;
+	overflow: auto;
 	width: 60px;
 	height: 70px;
 	float: left;
@@ -267,7 +267,7 @@ dd.yellow{color:#FF0}
 .Challenge_Background_Level{background:url(images/interface/Challenge_Background_Level.jpg) no-repeat;width:900px;height:600px}
 .Xiyouji_Background{background:url(images/interface/xiyouji_guanqia.jpg) no-repeat;width:900px;height:600px}
 
-.Sunflower_trophy{position:absolute;left:15px;top:310px;width:157px;height:269px;overflow:hidden;cursor:pointer}
+.Sunflower_trophy{position:absolute;left:15px;top:310px;width:157px;height:269px;overflow:auto;cursor:pointer}
 .Sunflower_trophy img{position:absolute;left:-157px;*filter:glow(color=#ffffff ,strength=8)}
 
 .Abbb{position:absolute;left:50%;margin-top:-20px;margin-left:-450px;padding-top:25px;height:60px;overflow:hidden;top:600px;width:900px;background:url('new_skin/game_bg.png') no-repeat 0 0;z-index:65535}
@@ -330,7 +330,7 @@ dd.yellow{color:#FF0}
 #dAdvSmallContainer .img1{top:17px}
 #dAdvSmallContainer .img2{left:8px;top:11px}
 
-.Announcement{position:absolute;left:50%;margin-top:-20px;margin-left:-450px;padding-top:25px;height:60px;overflow:hidden;top:600px;width:900px;background:url('new_skin/game_bg.png') no-repeat 0 0;z-index:65535}
+.Announcement{position:absolute;left:50%;margin-top:-20px;margin-left:-450px;padding-top:25px;height:60px;overflow:auto;top:600px;width:900px;background:url('new_skin/game_bg.png') no-repeat 0 0;z-index:65535}
 .Announcement .d1{float:left;position:relative;height:40px;width:75%}
 .Announcement .d1 .share{font-weight:bold;float:left;line-height:40px;margin-left:0;font-size:14px}
 .dLittleChat{float:left;width:25%;margin-top:5px}
