@@ -1692,7 +1692,7 @@ GrowPlant = function(l, d, c, e, b) {
 },
 AutoProduceSun = function(a) {
     AppearSun(GetX(Math.floor(1 + Math.random() * oS.C)), GetY(Math.floor(1 + Math.random() * oS.R)), a, 1);
-    oSym.addTask(Math.floor(9 + Math.random() * 3) * 100, AutoProduceSun, [a])
+    oSym.addTask(Math.floor(9 + Math.random() * 3) * 10, AutoProduceSun, [a])
 },
 AppearSun = function(h, f, e, a) {
     var b, d, g = "Sun" + Math.random(),
