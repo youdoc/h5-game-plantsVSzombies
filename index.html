@@ -6,10 +6,36 @@
 
     <body id="dBody" topmargin="0" leftmargin="0" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
-<body><script>
-
-</script>
+    
+    <!-- 密码验证页面 -->
+    <div id="password-screen">
+        <div class="password-container">
+            <h2>请输入密码</h2>
+            <input type="password" id="password-input" placeholder="输入密码">
+            <button onclick="checkPassword()">确定</button>
+            <div id="error-message"></div>
+        </div>
+    </div>
+    
+    <script>
+    // 密码验证逻辑
+    function checkPassword() {
+        const password = document.getElementById('password-input').value;
+        // 这里设置你的密码，例如 '123456'
+        if (password === 'xmz123') {
+            document.getElementById('password-screen').style.display = 'none';
+        } else {
+            document.getElementById('error-message').textContent = '密码错误，请重试';
+        }
+    }
+    
+    // 允许按回车键提交密码
+    document.getElementById('password-input').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            checkPassword();
+        }
+    });
+    </script>
    <div id="preloader">
 	    <div id="status" class="WindowFrame"></div>
     </div>
