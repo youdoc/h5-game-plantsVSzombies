@@ -102,6 +102,7 @@
 				<div class="OMd0">
 					<div class="OMd1">
 						<div><input type="checkbox" id="cAutoSun" value="1" onchange="CheckAutoSun(this)"> <label for="cAutoSun" id="lAutoSun">自动拾取阳光</label></div>
+						<div><input type="checkbox" id="cBlindBox" value="1" onchange="CheckBlindBox(this)"> <label for="cBlindBox" id="lBlindBox">盲盒模式</label></div>
 						<div><input type="checkbox" id="cSilence" value="1"> <label for="cSilence" id="lSilence">静&nbsp;&nbsp; &nbsp;&nbsp;音&nbsp;&nbsp;  </label></div>
 					</div>
 				</div>
@@ -500,8 +501,9 @@ LvlList=function(BLvl,SLvl1,SLvl2){
     <script>
     $User.Client.PC&&$User.HTTP?( 
 	    (oS.AutoSun=Math.floor(getCookie('JSPVZAutoSun')))&&($('cAutoSun').checked=true),
-	    (oS.Silence=Math.floor(getCookie('JSPVZSilence')))&&($('cSilence').checked=true)
-    ):(	    oS.AutoSun=1,$('cAutoSun').checked=true,
+	    (oS.Silence=Math.floor(getCookie('JSPVZSilence')))&&($('cSilence').checked=true),
+	    (oS.BlindBox=Math.floor(getCookie('JSPVZBlindBox')))&&($('cBlindBox').checked=true)
+    ):(    oS.AutoSun=1,$('cAutoSun').checked=true,
 	    oS.Silence=0,$('cSilence').checked=false);
     InitGame();
     </script>

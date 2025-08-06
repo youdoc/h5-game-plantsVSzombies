@@ -1339,7 +1339,22 @@ InitPCard = function() {
             Select: 0,
             PName: f
         };
-        d += '<div class="span1" id="Card' + EName + '" onmouseout="SetHidden($(\'dTitle\'))" onmousemove="ViewCardTitle(' + EName + ',event)" onclick="SelectCard(\'' + EName + '\')"><img src="' + c.PicArr[0] + '"><span class="span2">' + c.SunNum + "</span></div>";
+        
+        // 根据盲盒模式决定是否添加鼠标事件
+        if (oS.BlindBox) {
+            d += '<div class="span1" id="Card' + EName + '" onclick="SelectCard(\'' + EName + '\')">';
+        } else {
+            d += '<div class="span1" id="Card' + EName + '" onmouseout="SetHidden($(\'dTitle\'))" onmousemove="ViewCardTitle(' + EName + ',event)" onclick="SelectCard(\'' + EName + '\')">';
+        }
+        
+        // 盲盒模式下显示问号图片
+        if (oS.BlindBox) {
+            d += '<img src="images/question_mark.png">';
+        } else {
+            d += '<img src="' + c.PicArr[0] + '">';
+            d += '<span class="span2">' + c.SunNum + '</span>';
+        }
+        d += '</div>';
         b++%6 == 5 && (d += "<br>")
     }
     $("dPCard").innerHTML = d
@@ -1416,25 +1431,53 @@ ViewCardTitle = function(b, c) {
     })
 },
 SelectCard = function(c) {
+    
+    // 盲盒模式下随机选择一个植物
+    if (oS.BlindBox) {
+        // 获取所有可选且未被选择的植物
+        var availablePlants = [];
+        for (var key in ArPCard) {
+            if (ArPCard.hasOwnProperty(key) && ArPCard[key].PName && ArPCard[key].PName.prototype && ArPCard[key].PName.prototype.CanSelect && !ArPCard[key].Select) {
+                availablePlants.push(key);
+            }
+        }
+        
+        console.log('可用植物数量:', availablePlants.length);
+        
+        // 随机选择一个未被选择的植物
+        if (availablePlants.length > 0) {
+            var randomIndex = Math.floor(Math.random() * availablePlants.length);
+            c = availablePlants[randomIndex];
+            console.log('随机选择的植物:', c);
+        } else {
+            // 没有可选植物了
+            console.log('没有可用的植物了');
+            return;
+        }
+    }
+
     PlayAudio("tap");
     var h = $("Card" + c).childNodes,
     f = h[0],
     b = ArPCard[c],
     i = b.PName.prototype,
-    g,
-    a,
-    j,
-    e = $("btnOK");
+    g, a, j, e = $("btnOK");
+    
+    console.log('选择的植物:', c, '当前状态:', b.Select);
+    
     if (!b.Select) {
         if (! (ArPCard.SelNum |= 0)) {
             e.disabled = "";
             e.style.color = "#FC6"
         } else {
             if (ArPCard.SelNum > 9) {
-                return
+                console.log('已达到最大选择数量');
+                return;
             }
-        }++ArPCard.SelNum;
+        }
+        ++ArPCard.SelNum;
         b.Select = 1;
+        console.log('选中植物:', c, '当前选中数量:', ArPCard.SelNum);
         oS.StaticCard && (g = NewEle("dCard" + c, "div", "", {
             onclick: function() {
                 SelectCard(c)
@@ -1442,9 +1485,12 @@ SelectCard = function(c) {
         },
         $("dCardList")), NewImg(0, f.src, "width:100px;height:120px", g), innerText(NewEle("sSunNum" + c, "span", 0, 0, g), i.SunNum), f.style.top = "-42px")
     } else {
-        b.Select = 0; ! --ArPCard.SelNum && (e.disabled = "disabled", e.style.color = "#888"); (g = $("dCard" + c)).onclick = null;
+        b.Select = 0;
+        ! --ArPCard.SelNum && (e.disabled = "disabled", e.style.color = "#888");
+        (g = $("dCard" + c)).onclick = null;
         ClearChild(g.firstChild, g.childNodes[1], g.lastChild, g);
-        f.style.top = 0
+        f.style.top = 0;
+        console.log('取消选择植物:', c, '当前选中数量:', ArPCard.SelNum);
     }
 },
 ResetSelectCard = function() {
@@ -1452,7 +1498,7 @@ ResetSelectCard = function() {
     for (b in ArPCard) {
         ArPCard[b].Select && SelectCard(b)
     }
-    a.disabled = "disalbed";
+    a.disabled = "disabled";
     a.style.color = "#888"
 },
 LetsGO = function() {
@@ -1953,6 +1999,14 @@ CustomSpecial = function(c, b, d, a) { (new c).Birth(GetX(d), GetY(b), b, d, [],
 CheckAutoSun = function(a) {
     var b = a.checked ? 1 : 0;
     b != oS.AutoSun && (addCookie("JSPVZAutoSun", oS.AutoSun = b), b && AutoClickSun())
+},
+CheckBlindBox = function(a) {
+    var b = a.checked ? 1 : 0;
+    b != oS.BlindBox && (
+        addCookie("JSPVZBlindBox", oS.BlindBox = b),
+        // 重新初始化卡片以应用盲盒模式
+        typeof InitPCard === 'function' && InitPCard()
+    )
 },
 GetNewCard = function(a, b, c) {
     StopMusic();

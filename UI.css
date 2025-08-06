@@ -293,7 +293,7 @@ dd.yellow{color:#FF0}
 #dOptionsMenu .button{cursor:pointer;color:#632F00;text-decoration:none;font-family:方正准圆简体;font-size:30}
 #dOptionsMenu .OMd0{margin-top:120px;height:65px;position:relative}
 #dOptionsMenu .OMd0 .OMd1{position:absolute;left:150px;text-align:left}
-#dOptionsMenu .OMd0 .OMd1 div{height:30px}
+#dOptionsMenu .OMd0 .OMd1 div{height:20px}
 #dOptionsMenu .OMd0 .OMd1 div label{color:#000}
 
 #dMiniSmallContainer,#dxiyouji,#dRiddleSmallContainer,#dRiddleSmallContainer1,#dAdvSmallContainer{display:none;position:absolute;left:0;top:0}
